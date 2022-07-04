@@ -1,6 +1,8 @@
 <?php
 
+use App\Services\Console;
+
 require __DIR__."/vendor/autoload.php";
 
-$app = new \App\Services\Console();
+$app = new Console();
 

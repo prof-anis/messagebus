@@ -25,7 +25,7 @@ class TriggerCommandHandlerMiddleware
             return $register['commands'][$command];
         }
 
-        throw new Exception(sprintf('%s is not registered in the command bus.', $event));
+        throw new Exception(sprintf('%s is not registered in the command bus.', $command));
     }
 
     private function resolveCommandIdentifier(CommandInterface $command): string

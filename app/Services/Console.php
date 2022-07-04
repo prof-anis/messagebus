@@ -17,7 +17,7 @@ class Console
         $this->executeCommand();
     }
 
-    public function resolveConsoleInput()
+    public function resolveConsoleInput(): void
     {
         $consoleInput = $_SERVER['argv'];
 
@@ -28,12 +28,12 @@ class Console
         }
     }
 
-    public function executeCommand()
+    public function executeCommand(): void
     {
         try {
             $this->commandBus->run($this->command);
         } catch (\Exception $e) {
-            fwrite(STDOUT, 'Unkown command input.');
+            fwrite(STDOUT, 'Unknown command input.');
         }
     }
 }
