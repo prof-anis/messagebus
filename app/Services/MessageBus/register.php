@@ -1,15 +1,17 @@
 <?php
 
-use App\Services\SampleListener;
+use App\Services\HelloWorldCommandExecutedEvent;
+use App\Services\HelloWorldCommand;
+use App\Services\PrintCommandExecutedListener;
 
 return [
     'events' => [
-        'hello' => [
-            SampleListener::class,
+        HelloWorldCommandExecutedEvent::class => [
+            PrintCommandExecutedListener::class
         ],
     ],
 
     'commands' => [
-        'hello' => SampleListener::class
+        'hello' => HelloWorldCommand::class
     ],
 ];
